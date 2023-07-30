@@ -11,7 +11,6 @@ CÓD_MOEDA (((LEVANTAR CÓDIGO INTERNACIONAL DE CADA MOEDA LEVANTADA)))
 
 */
 
-
 create database regionalizacao_mundial;
 create table regionalizacao_mundial(
 ID int not null auto_increment,
@@ -86,13 +85,19 @@ where PAÍS='Tuvalu';
 update regionalizacao_mundial
 set COORDENADAS_GEOGRÁFICAS ='-15.208956820064973, 166.74420391526854', DEMOGRAFIA_POPULACIONAL='313000', IDIOMA_PRINCIPAL='Bislamá', MOEDA_PRINCIPAL='Vatu'
 where PAÍS='Vanuatu';
+update regionalizacao_mundial
+set DEMOGRAFIA_POPULACIONAL='1344000', IDIOMA_PRINCIPAL= 'Tétum', MOEDA_PRINCIPAL='Dólar'
+where PAÍS='Timor-Leste';
 
 
-select * from regionalizacao_mundial;
+select * from regionalizacao_mundial order by IDIOMA_PRINCIPAL;
 update regionalizacao_mundial
 set COORDENADAS_GEOGRÁFICAS ='', DEMOGRAFIA_POPULACIONAL='', IDIOMA_PRINCIPAL='', MOEDA_PRINCIPAL=''
 where PAÍS='';
 
 /*(((CORREÇÕES FEITAS)))*/
 update regionalizacao_mundial set PAÍS='Singapura' where PAÍS='Cingapura'; /*Alterado o nome do País de Singapura */
+update regionalizacao_mundial set IDIOMA_PRINCIPAL= 'Xona' where IDIOMA_PRINCIPAL= 'xona'; /*Correção de nomes de Idiomas */
+update regionalizacao_mundial set MOEDA_PRINCIPAL= 'Xelim somali' where MOEDA_PRINCIPAL= 'xelim somali'; /*Correção de nomes de Idiomas */
+select * from regionalizacao_mundial order by MOEDA_PRINCIPAL;
  
