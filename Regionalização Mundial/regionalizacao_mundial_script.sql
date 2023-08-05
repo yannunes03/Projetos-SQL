@@ -97,7 +97,7 @@ where PAÍS='';
 
 /*(((CORREÇÕES FEITAS)))*/
 update regionalizacao_mundial set PAÍS='Singapura' where PAÍS='Cingapura'; /*Alterado o nome do País de Singapura */
-update regionalizacao_mundial set IDIOMA_PRINCIPAL= 'Xona' where IDIOMA_PRINCIPAL= 'xona'; /*Correção de nomes de Idiomas */
-update regionalizacao_mundial set MOEDA_PRINCIPAL= 'Xelim somali' where MOEDA_PRINCIPAL= 'xelim somali'; /*Correção de nomes de Idiomas */
+update regionalizacao_mundial set IDIOMA_PRINCIPAL= 'Xona' where IDIOMA_PRINCIPAL= 'xona'; /*Correção ortográfica de nomes de Idiomas */
+update regionalizacao_mundial set MOEDA_PRINCIPAL= 'Xelim somali' where MOEDA_PRINCIPAL= 'xelim somali'; /*Correção ortográfica de nomes de moedas */
 select * from regionalizacao_mundial order by MOEDA_PRINCIPAL;
  
