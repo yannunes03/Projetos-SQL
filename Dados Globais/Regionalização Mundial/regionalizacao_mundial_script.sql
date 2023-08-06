@@ -90,14 +90,32 @@ set DEMOGRAFIA_POPULACIONAL='1344000', IDIOMA_PRINCIPAL= 'Tétum', MOEDA_PRINCIP
 where PAÍS='Timor-Leste';
 
 
-select * from regionalizacao_mundial order by IDIOMA_PRINCIPAL;
+select * from regionalizacao_mundial order by PAÍS;
 update regionalizacao_mundial
 set COORDENADAS_GEOGRÁFICAS ='', DEMOGRAFIA_POPULACIONAL='', IDIOMA_PRINCIPAL='', MOEDA_PRINCIPAL=''
 where PAÍS='';
 
-/*(((CORREÇÕES FEITAS)))*/
+/* Criando uma nova database com a relação global de moedas */
+create table relacao_global_moedas as select * from relacao_global_moedas.relacao_global_moedas;
+alter table relacao_global_moedas rename to relacao_global_moedas_ref; /* renomeando nome da tabela com a relação global de moedas */
+
+/* Anexo da tabela com a relação global de moedas à tabela principal "regionalizacao_mundial" */
+alter table relacao_global_moedas_ref change column país apagar varchar(30) not null;
+select * from regionalizacao_mundial join relacao_global_moedas_ref on regionalizacao_mundial.PAÍS = relacao_global_moedas_ref.apagar;
+
+
+desc regionalizacao_mundial;
+desc relacao_global_moedas_ref;
+select * from regionalizacao_mundial_rev1;
+
+/*(((CORREÇÕES & UPDATES)))*/
 update regionalizacao_mundial set PAÍS='Singapura' where PAÍS='Cingapura'; /*Alterado o nome do País de Singapura */
 update regionalizacao_mundial set IDIOMA_PRINCIPAL= 'Xona' where IDIOMA_PRINCIPAL= 'xona'; /*Correção ortográfica de nomes de Idiomas */
 update regionalizacao_mundial set MOEDA_PRINCIPAL= 'Xelim somali' where MOEDA_PRINCIPAL= 'xelim somali'; /*Correção ortográfica de nomes de moedas */
-select * from regionalizacao_mundial order by MOEDA_PRINCIPAL;
+alter table regionalizacao_mundial drop column MOEDA_PRINCIPAL; /*Deletado a coluna de nome "MOEDA_PRINCIPAL" para realização do JOIN de informações de moeda a partir de outra tabela */
+create table regionalizacao_mundial_rev1 as select * from regionalizacao_mundial join relacao_global_moedas_ref on regionalizacao_mundial.PAÍS = relacao_global_moedas_ref.apagar; /*Criar nova tabela de 
+regionalizaao_mundial, com a inclusão das informações de moeda = regionalizacao_mundial_rev1 */ 
+alter table regionalizacao_mundial_rev1 drop column apagar;
+
+
  

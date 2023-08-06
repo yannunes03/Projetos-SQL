@@ -8,6 +8,7 @@ NÚMERO_CÓDIGO_MOEDA int not null
 )  default charset = utf8mb4 ;
 
 select * from relacao_global_moedas;
+desc relacao_global_moedas;
 
 insert into relacao_global_moedas values
 /*PAÍS, MOEDA, CÓDIGO_MOEDA, NÚMERO_CÓDIGO_MOEDA */
@@ -278,3 +279,5 @@ insert into relacao_global_moedas values
 ('África do Sul', 'Rand', 'ZAR', '710'),
 ('Áustria', 'Euro', 'EUR', '978'),
 ('Índia', 'Rupia indiana', 'INR', '356');
+
+/*(((CORREÇÕES FEITAS))) */
