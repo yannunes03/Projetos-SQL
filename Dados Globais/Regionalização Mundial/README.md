@@ -10,6 +10,8 @@ Com esta base de dados viso disponibilizar uma relação com informações gerai
 - Código Moeda
 - Número Código Moeda 
 
+
+
 Abaixo segue uma breve demonstração com a relação das principais moedas correntes no mundo:
 
 | CONTINENTE | PAÍS | COORDENADAS GEOGRÁFICAS | DEMOGRAFIA_POPULACIONAL | IDIOMA_PRINCIPAL | MOEDA | CÓDIGO_MOEDA | NÚMERO_CÓDIGO_MOEDA |
@@ -23,3 +25,9 @@ Abaixo segue uma breve demonstração com a relação das principais moedas corr
 | Ásia | Rússia | '62.12213246900099, 91.57421820146874' | '146000000' | Russo | Rublo | RUB | 643 | 
 | Ásia | China | '34.905396642561335, 103.36166762097473' | '1410000000' | Mandarim | Yuan Renminbi | CNY | 156 | 
 | ... | ... | ... | ... | ... | ... | ... | ... | 
+
+**Obs.:** Nesta database há duas versões de tabelas:
+- "regionalizacao_mundial": Possui apenas as informações gerais de cada país.
+- "regionalizacao_mundial_rev1": Possui informações gerais de cada país + informações de moeda
+
+
