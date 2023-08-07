@@ -4,4 +4,9 @@ Com esta base de dados viso disponibilizar uma relação com todas as moedas vig
 
 Abaixo segue uma breve demonstração com a relação das principais moedas correntes no mundo:
 
+| MOEDA | CÓDIGO_MOEDA | NÚMERO | PAÍS |
+| :---: | :---: | :---: | :---: |
+| Dólar americano | USD | 840 | Estados Unidos|
+| Euro | EUR | 978 | Alemanha |
+
 
