@@ -14,6 +14,12 @@ Abaixo segue uma breve demonstração com a relação das principais moedas corr
 | Dólar canadense | CAD | 124 | Canadá |
 | Franco suíço | CHF | 756 | Suíça |
 | Dólar australiano | AUD | 36 | Austrália |
+| Yuan | CNY | 156 | China | 
+| Swedish Krona | SEK | 752 | Suécia |
+| Dóalr da Nova Zelândia | NZD | 554 | Nova Zelândia |
+| ... | ... | ... | ... | 
+
+
 
 
 
